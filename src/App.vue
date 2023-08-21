@@ -32,6 +32,14 @@ const handleLengthChange = () => {
     handleNuclearTypeChange(nuclearType.value)
 }
 
+const handleClear = () => {
+    mass.value = 0
+    massConcentration.value = 0
+    molarQuantity.value = 0
+    molarConcentration.value = 0
+    volumn.value = 0
+}
+
 const handleCalculate = () => {
     if (molarConcentration.value > 0) {
         massConcentration.value = molarConcentration.value * molarMass.value * 1e-6
@@ -132,6 +140,7 @@ const handleCalculate = () => {
                 </div>
             </el-form-item>
             <el-button type="primary" @click="handleCalculate"> 计算 </el-button>
+            <el-button type="primary" @click="handleClear"> 清空 </el-button>
         </el-form>
     </div>
 </template>
